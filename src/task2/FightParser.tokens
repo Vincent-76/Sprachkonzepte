@@ -1,0 +1,8 @@
+VS=1
+COLON=2
+FIGHTER1=3
+FIGHTER2=4
+POINTS=5
+'/'=1
+'fighter1'=3
+'fighter2'=4

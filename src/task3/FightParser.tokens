@@ -1,0 +1,8 @@
+VS=1
+COLON=2
+SEMICOLON=3
+FIGHTER=4
+POINTS=5
+'/'=1
+':'=2
+';'=3

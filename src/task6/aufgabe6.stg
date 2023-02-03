@@ -1,0 +1,58 @@
+// aufgabe6.stg
+delimiters "$", "$"
+
+classes(cl) ::= <<
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <style type="text/css">
+        th, td { border-bottom: thin solid; padding: 4px; text-align: left; }
+        td { font-family: monospace }
+    </style>
+</head>
+
+<body>
+    <h1>Sprachkonzepte, Aufgabe 6</h1>
+    $cl:classOrInterface(); separator="<br />"$
+</body>
+</html>
+>>
+
+classOrInterface(c) ::= <<
+$if(c.isInterface)$$interface(c)$$else$$class(c)$$endif$
+>>
+
+class(c) ::= <<
+<h2>class $c.name$:</h2>
+<table>
+    <tr>
+        <th>Interface</th>
+        <th>Methods</th>
+    </tr>
+    $c.interfaces:interfaces(); separator="\n"$
+</table>
+>>
+
+interface(i) ::= <<
+<h2>interface $i.name$:</h2>
+<table>
+<tr>
+    <th>Methods</th>
+</tr>
+<tr>
+    <td>$i.methods:method(); separator="<br />"$</td>
+</tr>
+$c.interfaces:interface(); separator="\n"$
+</table>
+>>
+
+interfaces(i) ::= <<
+<tr>
+    <td valign=top>$i.name$</td>
+    <td>$i.methods:method(); separator="<br />"$</td>
+</tr>
+>>
+
+method(m) ::= <<
+$m$
+>>
