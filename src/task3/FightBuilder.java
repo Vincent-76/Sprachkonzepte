@@ -35,7 +35,7 @@ public class FightBuilder extends FightParserBaseListener {
 	@Override
 	public void exitScore( FightParser.ScoreContext ctx ) {
 		Fighter fighter = new Fighter( ctx.getChild( 0 ).getText() );
-		Points points = new Points( ctx.getChild( 2 ).getText() );
+		Points points = new Points( Integer.parseInt( ctx.getChild( 2 ).getText() ) );
 		this.scoreStack.push( new Score( fighter, points ) );
 	}
 }

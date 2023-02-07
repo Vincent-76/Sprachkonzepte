@@ -5,6 +5,7 @@ package task3;
  */
 public class Fighter {
 	private final String name;
+	private Integer rank;
 
 	public Fighter( String name ) {
 		this.name = name;
@@ -12,6 +13,14 @@ public class Fighter {
 
 	public String getName() {
 		return name;
+	}
+
+	public Integer getRank() {
+		return rank;
+	}
+
+	public void setRank( Integer rank ) {
+		this.rank = rank;
 	}
 
 	@Override
@@ -26,6 +35,6 @@ public class Fighter {
 
 	@Override
 	public String toString() {
-		return name;
+		return name + "[" + rank + "]";
 	}
 }

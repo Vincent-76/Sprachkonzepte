@@ -4,18 +4,18 @@ package task3;
  * @author Vincent76
  */
 public class Points {
-	private final String points;
+	private final int points;
 
-	public Points( String points ) {
+	public Points( int points ) {
 		this.points = points;
 	}
 
-	public String getPoints() {
+	public int getPoints() {
 		return points;
 	}
 
 	@Override
 	public String toString() {
-		return points;
+		return String.valueOf( points );
 	}
 }
